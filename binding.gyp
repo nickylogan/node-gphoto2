@@ -3,7 +3,8 @@
     {
       'target_name': 'gphoto2',
       'include_dirs': [
-        "<!(node -e \"require('nan')\")"
+        "<!(node -e \"require('nan')\")",
+        "<!(pkg-config --cflags-only-I libgphoto2 | sed 's/-I//g')"
       ],
       'sources': [
         'src/autodetect.cc',
