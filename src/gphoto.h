@@ -11,8 +11,8 @@
 
 class GPCamera;
 
-static v8::Persistent<v8::String> gphoto_list_symbol;
-static v8::Persistent<v8::String> gphoto_onLog_symbol;
+static Nan::Persistent<v8::String> gphoto_list_symbol;
+static Nan::Persistent<v8::String> gphoto_onLog_symbol;
 
 class GPhoto2 : public Nan::ObjectWrap {
   struct log_request;

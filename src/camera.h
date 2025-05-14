@@ -32,11 +32,11 @@ struct TreeNode {
 
 typedef std::list<std::string> StringList;
 
-static v8::Persistent<v8::String> camera_getConfig_symbol;
-static v8::Persistent<v8::String> camera_getConfigValue_symbol;
-static v8::Persistent<v8::String> camera_setConfigValue_symbol;
-static v8::Persistent<v8::String> camera_takePicture_symbol;
-static v8::Persistent<v8::String> camera_downloadPicture_symbol;
+static Nan::Persistent<v8::String> camera_getConfig_symbol;
+static Nan::Persistent<v8::String> camera_getConfigValue_symbol;
+static Nan::Persistent<v8::String> camera_setConfigValue_symbol;
+static Nan::Persistent<v8::String> camera_takePicture_symbol;
+static Nan::Persistent<v8::String> camera_downloadPicture_symbol;
 
 class GPCamera : public Nan::ObjectWrap {
   uv_mutex_t cameraMutex;
