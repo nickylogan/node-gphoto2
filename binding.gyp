@@ -15,12 +15,11 @@
       ],
       'link_settings': {
         'libraries': [
-          '-lgphoto2',
-          '-lgphoto2_port'
+          "<!(pkg-config --libs libgphoto2)"
         ]
       },
       'cflags': [
-        '--std=c++11'
+        '--std=c++20'
       ],
       'cflags!': [
         '-fno-exceptions'
@@ -31,7 +30,7 @@
           'xcode_settings': {
             'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
             'OTHER_CPLUSPLUSFLAGS' : [
-              '-std=c++11',
+              '-std=c++20',
               '-stdlib=libc++'
             ]
           }
