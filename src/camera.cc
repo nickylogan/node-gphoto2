@@ -136,7 +136,8 @@ void GPCamera::Async_CaptureCb(uv_work_t *req, int status) {
   } else if (capture_req->data && capture_req->download) {
     argc = 2;
     if (capture_req->length) {
-      argv[1] = Nan::NewBuffer(capture_req->data, capture_req->length, DeleteArray, nullptr).ToLocalChecked();
+      argv[1] = Nan::CopyBuffer(capture_req->data, capture_req->length).ToLocalChecked();
+      delete [] capture_req->data;
     } else {
       argv[1] = Nan::NewBuffer(0).ToLocalChecked();
     }
